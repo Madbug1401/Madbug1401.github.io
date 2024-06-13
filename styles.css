@@ -16,6 +16,7 @@ body {
     justify-content: center;
     min-height: 100vh;
     padding: 20px;
+    overflow-x: hidden;
 }
 
 /* Estilo do cabeçalho */
@@ -28,6 +29,7 @@ header {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     animation: gradient 5s ease infinite;
     background-size: 200% 200%;
+    position: relative;
 }
 
 @keyframes gradient {
@@ -54,6 +56,27 @@ header p {
     color: #ecf0f1;
 }
 
+header::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.2);
+    animation: spin 10s linear infinite;
+    clip-path: circle(25%);
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 /* Estilo das seções */
 section {
     width: 100%;
@@ -63,12 +86,13 @@ section {
     background: #34495e;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
 }
 
 section h2 {
     font-size: 2em;
     margin-bottom: 20px;
-    border-bottom: 2px solid #3498db;
+    border-bottom: 2px solid #8e44ad;
     padding-bottom: 10px;
     color: #ecf0f1;
 }
@@ -90,7 +114,6 @@ section ul li {
 section ul li:hover {
     background: #1abc9c;
     transform: translateY(-5px);
-    color: #ecf0f1;
 }
 
 section ul li a {
@@ -99,6 +122,51 @@ section ul li a {
 }
 
 section ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo dos jogos */
+#games .game {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    background: #2c3e50;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+#games .game:hover {
+    transform: scale(1.05);
+}
+
+#games .game img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+#games .game-info {
+    padding: 20px;
+    color: #ecf0f1;
+}
+
+#games .game-info h3 {
+    margin-bottom: 10px;
+}
+
+#games .game-info p {
+    margin-bottom: 0;
+}
+
+#games .game-info a {
+    color: #1abc9c;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#games .game-info a:hover {
     text-decoration: underline;
 }
 
@@ -113,6 +181,35 @@ section ul li a:hover {
     text-decoration: underline;
 }
 
+/* Estilo do rodapé e animação de GIF */
+footer {
+    width: 100%;
+    background: #2c3e50;
+    color: #ecf0f1;
+    position: relative;
+}
+
+.gif-container {
+    position: absolute;
+    width: 100%; /* Ajuste conforme necessário */
+    height: 100%; /* Ajuste conforme necessário */
+    animation: move-horizontal 10s linear infinite; /* Ajuste a duração conforme necessário */
+}
+
+.gif-container img {
+    width: 250px; /* Ajuste conforme necessário */
+    height: auto;
+}
+
+@keyframes move-horizontal {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
 /* Estilo de responsividade */
 @media (max-width: 600px) {
     header h1 {
@@ -125,5 +222,23 @@ section ul li a:hover {
 
     section h2 {
         font-size: 1.5em;
+    }
+
+    #games .game {
+        flex-direction: column;
+    }
+
+    #games .game img {
+        width: 100%;
+        height: auto;
+    }
+
+    #games .game-info {
+        padding: 10px;
+    }
+
+    .gif-container {
+        width: 100px; /* Ajuste conforme necessário */
+        height: 100%; /* Ajuste conforme necessário */
     }
 }
