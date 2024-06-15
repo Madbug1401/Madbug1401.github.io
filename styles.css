@@ -32,6 +32,7 @@ header {
     overflow: hidden;
     animation: gradient 5s ease infinite;
 }
+
 @keyframes gradient {
     0% {
         background-position: 0% 50%;
@@ -59,20 +60,8 @@ header p {
 /* Estilo para o círculo */
 .circle {
     position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: rgba(255, 255, 255, 0.2);
-    clip-path: circle(25%);
-    z-index: 0;
-}
-
-/* Estilo para o círculo */
-.circle {
-    position: absolute;
-    top: -50%;
-    left: -50%;
+    top: 50%;
+    left: 50%;
     width: 200%;
     height: 200%;
     background: rgba(255, 255, 255, 0.2);
@@ -80,22 +69,21 @@ header p {
     transform: translate(-50%, -50%);
     z-index: 0;
 }
+
 /* Media Queries para diferentes larguras de tela */
 @media (max-width: 1024px) {
     .circle {
-        top: -60%;
-        left: -60%;
-        width: 220%;
-        height: 220%;
+        width: 180%;
+        height: 180%;
+        clip-path: circle(35%);
     }
 }
 
 @media (max-width: 768px) {
     .circle {
-        top: -75%;
-        left: -75%;
-        width: 250%;
-        height: 250%;
+        width: 150%;
+        height: 150%;
+        clip-path: circle(50%);
     }
 
     header h1 {
@@ -109,10 +97,9 @@ header p {
 
 @media (max-width: 480px) {
     .circle {
-        top: -90%;
-        left: -90%;
-        width: 300%;
-        height: 300%;
+        width: 120%;
+        height: 120%;
+        clip-path: circle(75%);
     }
 
     header h1 {
@@ -121,15 +108,6 @@ header p {
 
     header p {
         font-size: 0.9em;
-    }
-}
-
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
     }
 }
 
@@ -240,77 +218,53 @@ section ul li a:hover {
 /* Estilo do rodapé e animação de GIF */
 footer {
     width: 100%;
-    height: 95px;
+    height: 100px; /* Ajuste a altura conforme necessário */
     background: #2c3e50;
     color: #ecf0f1;
     position: relative;
-    padding: 20px 0;
 }
 
 .gif-container {
     position: absolute;
-    bottom: 15px;
-    width: 100%; /* Ajuste conforme necessário */
-    height: 100%; /* Ajuste conforme necessário */
-    animation: move-horizontal 10s linear infinite; /* Ajuste a duração conforme necessário */
+    bottom: -30px; /* Ajuste para garantir que o GIF fique um pouco mais abaixo */
+    left: -250px; /* Ajuste para garantir que o GIF comece fora da tela à esquerda */
+    animation: move-horizontal 10s linear infinite;
 }
 
 .gif-container img {
     width: 250px; /* Ajuste conforme necessário */
-    height: auto;
 }
 
 @keyframes move-horizontal {
     0% {
-        transform: translateX(-100%);
+        transform: translateX(-250px);
     }
     100% {
-        transform: translateX(100%);
+        transform: translateX(calc(100vw + 250px)); /* Garantir que o GIF percorra toda a largura da tela */
     }
 }
 
-/* Estilo de responsividade */
-@media (max-width: 600px) {
-    header h1 {
-        font-size: 2em;
-    }
-
-    header p {
-        font-size: 1em;
-    }
-
-    section h2 {
-        font-size: 1.5em;
-    }
-
-    #games .game {
-        flex-direction: column;
-    }
-
-    #games .game img {
-        width: 100%;
-        height: auto;
-    }
-
-    #games .game-info {
-        padding: 10px;
-    }
-
-    .gif-container {
-        width: 100%; /* Ajuste conforme necessário */
-    }
-}
 /* Media Queries para diferentes larguras de tela */
+@media (max-width: 1024px) {
+    .gif-container {
+        left: -200px; /* Ajuste para dispositivos móveis */
+        width: 100%; /* Ajuste conforme necessário para dispositivos móveis */
+        animation: move-horizontal 15s linear infinite;
+    }
+}
+
 @media (max-width: 768px) {
     .gif-container {
-        bottom: 10px;
+        left: -150px; /* Ajuste para dispositivos móveis */
         width: 100%; /* Ajuste conforme necessário para dispositivos móveis */
+        animation: move-horizontal 13s linear infinite;
     }
 }
 
 @media (max-width: 480px) {
     .gif-container {
-        bottom: 5px;
+        left: -100px; /* Ajuste para dispositivos móveis */
         width: 100%; /* Ajuste conforme necessário para dispositivos móveis */
+        animation: move-horizontal 10s linear infinite;
     }
 }
