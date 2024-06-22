@@ -1,26 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nicolay Santos - Portfólio</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
+    <header class="text-center p-4 bg-primary text-white">
         <h1>Nicolay Santos</h1>
         <p>Engenheiro de Sistemas e Informática | Programação e Desenvolvimento de Jogos</p>
         <div class="circle"></div>
     </header>
     
-    <section id="about">
-        <h2>Sobre Mim</h2>
+    <section id="about" class="container mt-5 section">
+        <h2 class="section-title">Sobre Mim</h2>
         <p>Formado em Engenharia de Sistemas e Informática pela Universidade de Jean Piaget. Tenho experiência em desenvolvimento de software e uma paixão especial por desenvolvimento de jogos.</p>
     </section>
-    <section id="skills">
-        <h2>Habilidades</h2>
-        <ul>
+    <section id="skills" class="container mt-5 section">
+        <h2 class="section-title">Habilidades</h2>
+        <ul class="list-unstyled">
             <li>Python, JavaScript, C#</li>
             <li>Unity, Unreal Engine, Godot</li>
             <li>HTML, CSS, React, Node.js</li>
@@ -28,60 +29,72 @@
             <li>APIs (GraphQL), Git, Docker</li>
         </ul>
     </section>
-    <section id="projects">
-        <h2>Projetos</h2>
-        <ul>
+    <section id="projects" class="container mt-5 section">
+        <h2 class="section-title">Projetos</h2>
+        <ul class="list-unstyled">
             <li>
-                <h3>Projeto 1</h3>
+                <h3 class="project-title">Projeto 1</h3>
                 <p>Descrição breve do projeto. <a href="link-para-o-repositorio">Ver no GitHub</a></p>
             </li>
             <li>
-                <h3>Projeto 2</h3>
+                <h3 class="project-title">Projeto 2</h3>
                 <p>Descrição breve do projeto. <a href="link-para-o-repositorio">Ver no GitHub</a></p>
             </li>
             <li>
-                <h3>Projeto 3</h3>
+                <h3 class="project-title">Projeto 3</h3>
                 <p>Descrição breve do projeto. <a href="link-para-o-repositorio">Ver no GitHub</a></p>
             </li>
         </ul>
     </section>
-    <section id="games">
-        <h2>Jogos Desenvolvidos</h2>
-        <div class="game">
-            <img src="img/1327999.jpeg" alt="Jogo 1">
-            <div class="game-info">
-                <h3>Jogo 1</h3>
-                <p>Descrição breve do jogo. <a href="link-para-o-jogo">Ver mais</a></p>
+    <section id="games" class="container mt-5 section">
+        <h2 class="section-title">Jogos Desenvolvidos</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 game">
+                    <img src="img/1327999.jpeg" class="card-img-top" alt="Jogo 1">
+                    <div class="card-body game-info">
+                        <h3 class="card-title">Jogo 1</h3>
+                        <p class="card-text">Descrição breve do jogo. <a href="link-para-o-jogo">Ver mais</a></p>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="game">
-            <img src="img/1340251.jpeg" alt="Jogo 2">
-            <div class="game-info">
-                <h3>Jogo 2</h3>
-                <p>Descrição breve do jogo. <a href="link-para-o-jogo">Ver mais</a></p>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 game">
+                    <img src="img/1340251.jpeg" class="card-img-top" alt="Jogo 2">
+                    <div class="card-body game-info">
+                        <h3 class="card-title">Jogo 2</h3>
+                        <p class="card-text">Descrição breve do jogo. <a href="link-para-o-jogo">Ver mais</a></p>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="game">
-            <img src="img/597965.jpg" alt="Jogo 3">
-            <div class="game-info">
-                <h3>Jogo 3</h3>
-                <p>Descrição breve do jogo. <a href="link-para-o-jogo">Ver mais</a></p>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 game">
+                    <img src="img/597965.jpg" class="card-img-top" alt="Jogo 3">
+                    <div class="card-body game-info">
+                        <h3 class="card-title">Jogo 3</h3>
+                        <p class="card-text">Descrição breve do jogo. <a href="link-para-o-jogo">Ver mais</a></p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="contact">
-        <h2>Contato</h2>
-        <p><a href="https://linkedin.com/in/seu-linkedin">LinkedIn</a></p>
+    <section id="contact" class="container mt-5 section">
+        <h2 class="section-title">Contato</h2>
+        <p><a href="https://linkedin.com/in/seu-linkedin" class="btn btn-link">LinkedIn</a></p>
         <p>Email: seuemail@example.com</p>
     </section>
 
-    <footer>
+    <footer class="bg-dark text-white text-center">
+        <div class="path-container"></div>
         <div class="gif-container">
-            <img src="gif/running-ezgif.com-gif-maker.gif" alt="Animação de Jogo">
+            <img src="gif/puto.gif" alt="Animação de Jogo">
         </div>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
     <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
